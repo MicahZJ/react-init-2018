@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Computed from './Computed'
+import ComponentShowTime from './ComponentShowTime'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      inputDate: ''
+      inputDate: '',
+      showFlag: true
     }
+  }
+
+  handleShowHide() {
+    console.log('111', this.state.showFlag)
+    this.setState({
+      showFlag: !this.state.showFlag
+    })
   }
 
   render() {
@@ -22,7 +30,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Computed />
+        <button onClick={this.handleShowHide.bind(this)}>显示或隐藏</button>
+        {this.state.showFlag ? <ComponentShowTime />: null}
       </div>
     );
   }
