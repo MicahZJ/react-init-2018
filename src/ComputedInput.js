@@ -4,7 +4,7 @@ class ComputedInput extends Component{
   constructor() {
     super()
     this.state = {
-      inputDate: ''
+      inputDate: 0
     }
   }
 
@@ -14,10 +14,17 @@ class ComputedInput extends Component{
     })
   }
 
+  onConversion() {
+    if(this.props.onSubmit) {
+      this.props.onSubmit(this.state.inputDate)
+    }
+  }
+
   render() {
     return(
       <div>
-        输入：<input value={this.state.inputDate} onChange={this.handleInput.bind(this)}/>
+        输入：<input type={'number'} value={this.state.inputDate} onChange={this.handleInput.bind(this)}/>
+        <button onClick={this.onConversion.bind(this)}>转换</button>
       </div>
     )
   }

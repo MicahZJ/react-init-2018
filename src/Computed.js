@@ -6,19 +6,21 @@ class Computed extends Component{
   constructor() {
     super()
     this.state={
-      inputDate: ''
+      inputDate: 0
     }
   }
 
-  handleInputChange() {
-
+  handleInputChange(comment) {
+    this.setState({
+      inputDate: comment
+    })
   }
 
   render() {
     return(
       <div>
         <ComputedInput onSubmit={this.handleInputChange.bind(this)} />
-        <PercentageShower />
+        <PercentageShower date={this.state.inputDate}/>
       </div>
     )
   }
