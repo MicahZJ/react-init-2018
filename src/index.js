@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.styl';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import App from './App';
 // import CommentApp from "./CommentApp";
+import CommentDemoApp from './CommentDemoApp'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<CommentDemoApp />, document.getElementById('root'));
 registerServiceWorker();
