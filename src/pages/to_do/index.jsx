@@ -36,7 +36,7 @@ export default class AddTodo extends Component {
         <h2>Center Mode</h2>
         <Slider {...settings}>
           <div>
-            <h3 style={{height: '300px'}}>1</h3>
+            <h3 style={{height: '200px',background: 'red'}}>1</h3>
           </div>
           <div>
             <h3>2</h3>
