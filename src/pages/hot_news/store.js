@@ -14,7 +14,7 @@ export default class Store {
   @action b() {
   }
   
-  @action setData() {
+  @action setImageHeight() {
 	  this.imgHeight = 'auto'
 			  // this.data = ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']
   }

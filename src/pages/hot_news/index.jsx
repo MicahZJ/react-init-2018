@@ -55,7 +55,7 @@ export default class CommentXX extends Component {
 						      onLoad={() => {
 							      // fire window resize event to change height
 							      window.dispatchEvent(new Event('resize'));
-							      this.store.setData();
+							      this.store.setImageHeight();
 						      }}
 					      />
 				      </a>
