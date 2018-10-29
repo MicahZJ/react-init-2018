@@ -11,12 +11,15 @@ export default class AppRoute extends Component {
   render() {
     return(<Router>
       <div>
-        <ul>
-          <li><Link to="/">主页</Link></li>
-          <li><Link to="/hot">热门</Link></li>
-	        <li><Link to="/todo">去干活</Link></li>
-        </ul>
-        <hr/>
+        <div className={'nav-menu'}>
+	        <div className={'blur-bg'}></div>
+	        <div className="nav-mask"></div>
+	        <ul className={'menu-list'}>
+		        <li><Link to="/">主页</Link></li>
+		        <li><Link to="/hot">热门</Link></li>
+		        <li><Link to="/todo">去干活</Link></li>
+	        </ul>
+        </div>
 	      <Route exact path="/" component={homePage}></Route>
         <Route exact path="/todo" component={todo}></Route>
         <Route exact path="/hot" component={hotNews} ></Route>

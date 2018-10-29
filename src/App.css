@@ -1,32 +1,57 @@
+ul, li {
+  padding: 0;
+  margin: 0;
+}
 #root {
-  overflow-x: hidden;
-}
-.App {
-  text-align: center;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#root .nav-menu {
+  position: relative;
+  /*z-index: 200;*/
+  height: 42px;
+  color: #222;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#root .nav-menu .blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i0.hdslb.com/bfs/archive/7144f963c55de1c9167033c3d11f6213008f65d2.png');
+  background-position: center -10px;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+}
+#root .nav-menu .nav-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0,0%,100%,.4);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
-.App-title {
-  font-size: 1.5em;
+#root .nav-menu .menu-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
 }
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#root .nav-menu .menu-list a {
+  text-decoration: none;
+  color: #222;
+  height: 100%;
+  display: block;
+  font-size: 12px;
+  padding: 0 8px;
+  font-family: Microsoft Yahei,Tahoma,Helvetica,Arial,"\5B8B\4F53",sans-serif;
 }

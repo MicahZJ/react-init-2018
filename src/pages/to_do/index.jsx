@@ -32,7 +32,7 @@ export default class AddTodo extends Component {
       arrows:false
     };
 		return(
-			<div>{this.store.a}
+			<div>
         <h2>Center Mode</h2>
         <Slider {...settings}>
           <div>

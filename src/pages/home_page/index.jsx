@@ -6,7 +6,7 @@ import {withRouter} from "react-router-dom"
 @inject('homePageStore')
 @withRouter
 @observer
-export default class CommentXX extends Component {
+export default class CommentHomePage extends Component {
 	
 	constructor(props) {
 		super(props)
@@ -21,7 +21,7 @@ export default class CommentXX extends Component {
 	
 	render() {
 		return (
-			<div>123</div>
+			<div id={'home-page-wrapper'}>{this.store.a}</div>
 		)
 	}
 }
