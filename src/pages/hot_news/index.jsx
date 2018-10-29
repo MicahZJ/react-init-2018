@@ -17,7 +17,7 @@ export default class CommentXX extends Component {
   toPages() {
     this.props.history.push('/todo')
   }
-
+  
   componentWillMount() {
   }
 
@@ -37,9 +37,8 @@ export default class CommentXX extends Component {
 		                afterChange={index => this.store.setIndex(index)}
 		      >
 			      {this.store.data.map((val, index) => (
-				      <a
+				      <a className={Style['aaa']}
 					      key={val}
-					      href="http://www.alipay.com"
 					      style={{
 						      display: 'block',
 						      position: 'relative',
