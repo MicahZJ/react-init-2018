@@ -14,7 +14,6 @@ export default class AddTodo extends Component {
 	}
 
   componentWillMount() {
-		document.title = 'just do it'
   }
 
   componentWillUnmount() {

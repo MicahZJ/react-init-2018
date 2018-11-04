@@ -101,11 +101,20 @@
       "transform-class-properties"
     ]
   },
+  "proxy": {
+    "/*": {
+      "target": "http://localhost:8089",
+      "changeOrigin": true
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
     "antd-mobile": "^2.2.5",
-    "babel-plugin-transform-react-pug": "^6.0.1"
+    "axios": "^0.18.0",
+    "babel-plugin-transform-react-pug": "^6.0.1",
+    "express": "^4.16.4",
+    "proxy": "^0.2.4"
   }
 }

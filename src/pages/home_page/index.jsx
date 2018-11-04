@@ -14,6 +14,9 @@ export default class CommentHomePage extends Component {
 	}
 	
 	componentWillMount() {
+		document.title = 'just do it'
+		this.store.getHomePageData()
+		this.store._test()
 	}
 	
 	componentWillUnmount() {
@@ -21,7 +24,9 @@ export default class CommentHomePage extends Component {
 	
 	render() {
 		return (
-			<div id={'home-page-wrapper'}>{this.store.a}</div>
+			<div id={'home-page-wrapper'}>
+			
+			</div>
 		)
 	}
 }
