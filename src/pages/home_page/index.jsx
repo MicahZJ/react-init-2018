@@ -16,7 +16,7 @@ export default class CommentHomePage extends Component {
 	componentWillMount() {
 		document.title = 'just do it'
 		this.store.getHomePageData()
-		this.store._test()
+		this.store._getBiliBili()
 	}
 	
 	componentWillUnmount() {
@@ -25,7 +25,11 @@ export default class CommentHomePage extends Component {
 	render() {
 		return (
 			<div id={'home-page-wrapper'}>
-			
+				<div>
+					{this.store.menuArr.map((val, index) => (
+						<li key={index}>{val.title}</li>
+						))}
+				</div>
 			</div>
 		)
 	}

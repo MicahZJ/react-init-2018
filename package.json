@@ -115,6 +115,7 @@
     "axios": "^0.18.0",
     "babel-plugin-transform-react-pug": "^6.0.1",
     "express": "^4.16.4",
+    "postcss-pxtorem": "^4.0.1",
     "proxy": "^0.2.4"
   }
 }

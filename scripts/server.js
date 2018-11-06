@@ -1,11 +1,13 @@
 const express = require('express')
 const axios = require('axios')
+axios.defaults.headers.post['Content-Type']='application/json; charse=UTF-8'
+axios.defaults.headers.get['Content-Type']='application/json; charse=UTF-8'
 
 var app = express()
 
 app.all('*', function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header("Access-Control-Allow-Headers", "Content-Type");
 	res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
 	res.header("X-Powered-By",' 3.2.1')
 	res.header("Content-Type", "application/json;charset=utf-8");
@@ -18,23 +20,8 @@ var server = app.listen(8089, () => {
 
 var apiRouter = express.Router()
 
-apiRouter.get('/getGlobal', (req, res) => {
-	var url = 'https://bangumi.bilibili.com/api/timeline_v2_global'
-	axios.get(url, {
-		headers: {
-			referer: 'https://www.bilibili.com',
-			authority: 'www.bilibili.com'
-		},
-		params: req.query
-	}).then((response) => {
-		res.json(response.data)
-	}).catch((e) => {
-		console.error(e)
-	})
-})
-
 apiRouter.get('/getPicList', (req, res) => {
-	console.log('执行了getPicList接口')
+	console.log('进入接口qq')
 	var url = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
 	axios.get(url, {
 		headers: {
@@ -49,12 +36,21 @@ apiRouter.get('/getPicList', (req, res) => {
 	})
 })
 
-apiRouter.post('/getTest',(req,res) => {
-	var url = 'http://www.tuling123.com/openapi/api'
-	axios.post(url, {
+// 番剧索引
+apiRouter.get('/getBiliBili',(req,res) => {
+	console.log('进入接口bl')
+	var url = 'https://bangumi.bilibili.com/media/web_api/search/result'
+	axios.get(url, {
+		headers: {
+			Host:'bangumi.bilibili.com',
+			Origin: 'https://www.bilibili.com',
+			Referer: 'https://www.bilibili.com/anime/index/'
+		},
 		params: req.query
 	}).then((response) => {
-		res.json(response)
+		res.json(response.data)
+	}).catch((e) => {
+		console.error(e)
 	})
 })
 

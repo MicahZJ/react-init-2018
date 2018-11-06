@@ -20,16 +20,28 @@ export function getGlobal() {
 	})
 }
 
-export function test () {
-	const url = '/api/getTest'
+export function searchBiLiBiLiInfo () {
+	console.log('请求bl')
+	const url = '/api/getBiliBili'
 	const data = Object.assign({
-		key:'c9d1eb9811e648a49ece24b7cb1065e9',
-		info:'今天我最美',
-		userId:1234
+		season_version: -1,
+		area: -1,
+		is_finish: -1,
+		copyright: -1,
+		season_status: -1,
+		season_month: -1,
+		pub_date: -1,
+		style_id: -1,
+		order: 3,
+		st: 1,
+		sort: 0,
+		page: 1,
+		season_type: 1,
+		pagesize: 20,
 	})
-	return axios.post(url, {
+	return axios.get(url, {
 		params: data
 	}).then((res) => {
-		return Promise.resolve(res)
+		return Promise.resolve(res.data)
 	})
 }
