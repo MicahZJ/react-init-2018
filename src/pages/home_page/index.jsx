@@ -25,9 +25,9 @@ export default class CommentHomePage extends Component {
 	render() {
 		return (
 			<div id={'home-page-wrapper'}>
-				<div>
+				<div className={'page-content'}>
 					{this.store.menuArr.map((val, index) => (
-						<li key={index}>{val.title}</li>
+						<li className={'li-class'} key={index}>{val.title}</li>
 						))}
 				</div>
 			</div>

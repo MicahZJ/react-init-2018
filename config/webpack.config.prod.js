@@ -122,7 +122,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+              presets: ['es2015', 'stage-0', 'react'],
             },
             loader: require.resolve('eslint-loader'),
           },
