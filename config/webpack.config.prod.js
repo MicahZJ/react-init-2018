@@ -11,6 +11,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
+const px2rem = require('postcss-px2rem')
 const getClientEnvironment = require('./env');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -202,6 +203,7 @@ module.exports = {
                             ],
                             flexbox: 'no-2009',
                           }),
+                          px2rem({ remUnit: 37.5 })
                         ],
                       },
                     },
