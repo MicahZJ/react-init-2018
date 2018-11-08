@@ -108,6 +108,21 @@ module.exports = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
+      // {
+      //   test: /\.styl$/,
+      //   use: [{
+      //     loader: 'style-loader'
+      //   }, {
+      //     loader: 'css-loader'
+      //   }, {
+      //     loader: 'px2rem-loader',
+      //     // options here
+      //     options: {
+      //       remUni: 75,
+      //       remPrecision: 8
+      //     }
+      //   }]
+      // },
       {
         test: /\.(js|jsx|mjs)$/,
         enforce: 'pre',
@@ -188,10 +203,10 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
-                    px2rem({ remUnit: 37.5 })
+                    px2rem({ remUnit: 37.5})
                   ],
                 },
-              },
+              }
             ],
           },
           // {
@@ -220,6 +235,7 @@ module.exports = {
           //               'not ie < 9', // React doesn't support IE8 anyway
           //             ],
           //             flexbox: 'no-2009',
+          //             remove: false
           //           }),
           //           px2rem({ remUnit: 37.5 })
           //         ],
