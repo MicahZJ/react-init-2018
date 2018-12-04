@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom'
 import {inject, observer} from "mobx-react/index"
 import {withRouter} from "react-router-dom"
 
-@inject('homePageStore')
+@inject('menuStore')
 @withRouter
 @observer
 export default class CommentHomePage extends Component {
 	
 	constructor(props) {
 		super(props)
-		this.store = this.props.homePageStore
+		this.store = this.props.menuStore
 	}
 	
 	componentWillMount() {
@@ -24,13 +24,15 @@ export default class CommentHomePage extends Component {
 	}
 	
 	render() {
-		return (
-			<div className={'home-page-wrapper'}>
-				<div className={'page-content'}>
-					{this.store.menuArr.map((val, index) => (
-						<li className={'li-class'} key={index}>{val.title}</li>
-						))}
-				</div>
+		return(
+			<div className={'nav-menu'}>
+				<div className={'blur-bg'}></div>
+				<div className="nav-mask"></div>
+				<ul className={'menu-list'}>
+					<li><Link to="/">主页</Link></li>
+					<li><Link to="/hot">热门</Link></li>
+					<li><Link to="/todo">去干活</Link></li>
+				</ul>
 			</div>
 		)
 	}
